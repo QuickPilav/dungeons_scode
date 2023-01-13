@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbac89af189f54846a47cb018d24512a, type: 3}
+  m_Name: Rifle
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 9f914d9261f632c428eb47f310b5ac36, type: 3}
+  itemName_Turkish: "Taaruz T\xFCfe\u011Fi"
+  itemName_English: Assault Rifle
+  stats:
+    fireMode: 0
+    fireRate: 0.12
+    damage: 7
+    bulletsPerMag: 30
+    bulletsLeftMax: 90
+    pelletAmount: 1
+    spread: 5
+    shakeAmount: 0.3
+    reloadDuration: 1.4
+    drawClip: {fileID: 8300000, guid: 774b595b2946ebc4aa530b554a55a6db, type: 3}
+    fireClips:
+    - {fileID: 8300000, guid: f9777a337e166684e918459badb845a4, type: 3}
+    - {fileID: 8300000, guid: 82f7af50e51710348988d5ae3c3e019e, type: 3}
+    - {fileID: 8300000, guid: 0d1a0efd7d6391b4ba99396b6c823b91, type: 3}
+    - {fileID: 8300000, guid: 251a1996f6568ac439b0bc8e569e5958, type: 3}
+    fireOthersClip:
+    - {fileID: 8300000, guid: 58524eb79e9e2b84a9ddacb3ff9d5912, type: 3}
+    - {fileID: 8300000, guid: 9301a738d3ab6ae40962535b04eef7b3, type: 3}
+    - {fileID: 8300000, guid: c25219a0883d0c54299cd5c62fed8d36, type: 3}
+    - {fileID: 8300000, guid: 04fb4c96d1eef0744bb715238410882c, type: 3}
+    reloadClip: {fileID: 8300000, guid: ff00f2f3db0f9db49a5737d66462d5c1, type: 3}

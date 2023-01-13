@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbac89af189f54846a47cb018d24512a, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: cdaa4981e4e302244a6eea37e44ce222, type: 3}
+  itemName_Turkish: "Pompal\u0131"
+  itemName_English: Shotgun
+  stats:
+    fireMode: 1
+    fireRate: 0.12
+    damage: 35
+    bulletsPerMag: 2
+    bulletsLeftMax: 12
+    pelletAmount: 8
+    spread: 15
+    shakeAmount: 1.3
+    reloadDuration: 1.4
+    drawClip: {fileID: 8300000, guid: bbcb8e26bca92324194c32be9ef7290b, type: 3}
+    fireClips:
+    - {fileID: 8300000, guid: 39583f1eee43f394684dd9ac825da8e6, type: 3}
+    - {fileID: 8300000, guid: eb16ef32df40f204499c7ceb53e9fe27, type: 3}
+    fireOthersClip:
+    - {fileID: 8300000, guid: 9cc5582cab6834c4cafd7c5ca19207a6, type: 3}
+    - {fileID: 8300000, guid: d511de20168a0c247a52683de46585e6, type: 3}
+    reloadClip: {fileID: 8300000, guid: 78c5831b3af6aa9439a826f1e5680bce, type: 3}

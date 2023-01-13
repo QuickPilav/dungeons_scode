@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819f271027c6b564da33f342e849bdb3, type: 3}
+  m_Name: DefaultLeveling
+  m_EditorClassIdentifier: 
+  levels:
+  - xpRequired: 0
+    coinGives: 0
+  - xpRequired: 20
+    coinGives: 25
+  - xpRequired: 30
+    coinGives: 30
+  - xpRequired: 40
+    coinGives: 35
+  - xpRequired: 50
+    coinGives: 40
+  - xpRequired: 60
+    coinGives: 45
+  - xpRequired: 70
+    coinGives: 50
+  - xpRequired: 80
+    coinGives: 55
+  - xpRequired: 90
+    coinGives: 60
+  - xpRequired: 100
+    coinGives: 65
+  - xpRequired: 110
+    coinGives: 70
+  - xpRequired: 120
+    coinGives: 75
+  - xpRequired: 130
+    coinGives: 80
+  - xpRequired: 140
+    coinGives: 85
+  - xpRequired: 150
+    coinGives: 90
+  - xpRequired: 160
+    coinGives: 95
+  - xpRequired: 170
+    coinGives: 100
+  - xpRequired: 180
+    coinGives: 105
+  - xpRequired: 190
+    coinGives: 110
+  - xpRequired: 200
+    coinGives: 115
+  - xpRequired: 210
+    coinGives: 120

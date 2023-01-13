@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbac89af189f54846a47cb018d24512a, type: 3}
+  m_Name: Sniper
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 1e7f8d7d8c400f348af5bdfd9452a40d, type: 3}
+  itemName_Turkish: "Keskin Ni\u015Fan T\xFCfe\u011Fi"
+  itemName_English: Sniper
+  stats:
+    fireMode: 1
+    fireRate: 1.5
+    damage: 50
+    bulletsPerMag: 5
+    bulletsLeftMax: 10
+    pelletAmount: 1
+    spread: 0
+    shakeAmount: 0.6
+    reloadDuration: 1.4
+    drawClip: {fileID: 8300000, guid: dd1ebcbc7f4c95446b1c383f7759939c, type: 3}
+    fireClips:
+    - {fileID: 8300000, guid: 6ab1f4a8639e06e4b92571529720030e, type: 3}
+    - {fileID: 8300000, guid: 5e98096bccb270541b43502132e0f933, type: 3}
+    - {fileID: 8300000, guid: 447f3cc877b48aa499904676231329ec, type: 3}
+    - {fileID: 8300000, guid: 22be8799b578b2948aea3e3ee9b74ed4, type: 3}
+    fireOthersClip:
+    - {fileID: 8300000, guid: 16486629a76b2cd45b14879d05c96695, type: 3}
+    - {fileID: 8300000, guid: ac26243036bd91c468e08df150b75eae, type: 3}
+    - {fileID: 8300000, guid: ac00dea0c300a4c4ea9790d5fbbae140, type: 3}
+    - {fileID: 8300000, guid: a8b2d709fe68fdf4391521c679b3cc3b, type: 3}
+    reloadClip: {fileID: 8300000, guid: a454dcfa0a0731c489498f0272521054, type: 3}

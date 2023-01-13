@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ea5b7a01f0cd3488b17a84bd3b8da3, type: 3}
+  m_Name: classSissy
+  m_EditorClassIdentifier: 
+  playerClass: 1
+  visualName: Sissy
+  description: "\xDCniversite \xD6\u011Frencisi Olan S\u0131ssy Ko\u015FuYapmay\u0131
+    \xC7ok Sever. H\u0131zl\u0131 Bir Ko\u015Fucu Olan S\u0131ssy Eski Okuluna \xC7ok
+    Say\u0131da Kupa Kazand\u0131rm\u0131\u015Ft\u0131r. Ancak Kendisini \xC7okta
+    \u0130yi Korudu\u011Fu S\xF6ylenemez."
+  pointsCost: 75

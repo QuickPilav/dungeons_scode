@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ea5b7a01f0cd3488b17a84bd3b8da3, type: 3}
+  m_Name: classVlonderz
+  m_EditorClassIdentifier: 
+  playerClass: 3
+  visualName: VLondeRz
+  description: "En B\xFCy\xFCk Hayali Bir Okul Maskotu Olmak \u0130steyen Yusuf Evde
+    Kendi Yapt\u0131\u011F\u0131 Kost\xFCm\xFC Giyerek Etraf\u0131ndaki \u0130nsanlar\u0131
+    E\u011Flendirmeye Bay\u0131l\u0131r. En Sevdi\u011Fi \u015Eey Kost\xFCm\xFCd\xFCr."
+  pointsCost: 120

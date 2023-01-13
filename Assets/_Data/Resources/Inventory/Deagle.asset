@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbac89af189f54846a47cb018d24512a, type: 3}
+  m_Name: Deagle
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 8c57969c30b5016408eff25165c5570c, type: 3}
+  itemName_Turkish: "A\u011F\u0131r Tabanca"
+  itemName_English: Heavy Pistol
+  stats:
+    fireMode: 1
+    fireRate: 0.75
+    damage: 20
+    bulletsPerMag: 5
+    bulletsLeftMax: 20
+    pelletAmount: 1
+    spread: 1
+    shakeAmount: 1
+    reloadDuration: 1.4
+    drawClip: {fileID: 8300000, guid: cf970ef528477974cb375314fe4d931b, type: 3}
+    fireClips:
+    - {fileID: 8300000, guid: 21a389aede56a894493e3a7a793ad347, type: 3}
+    - {fileID: 8300000, guid: 36d49b4c556553d4fa95ca868d20337e, type: 3}
+    fireOthersClip:
+    - {fileID: 8300000, guid: 353c33e8ef5170b42b0e3881357f896c, type: 3}
+    - {fileID: 8300000, guid: c54247b01945cf5488f1ac0da6146b38, type: 3}
+    reloadClip: {fileID: 8300000, guid: 769112fc0ddc1b74190d54536f0610c9, type: 3}
