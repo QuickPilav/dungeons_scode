@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6B7AE07A-6769-2A66-8A2E-4E25F8D7C5D3}</ProjectGuid>
+    <ProjectGuid>{720A91B9-81B8-1298-9097-55202D27239A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -61,9 +61,9 @@
     <Compile Include="Assets\QuickButtons\Code\Editor\QuickButtonDrawer.cs" />
     <Compile Include="Assets\_Scripts\Language\Code\Editor\SearchablePopup.cs" />
     <Compile Include="Assets\_Scripts\Language\Code\Editor\SearchableEnumDrawer.cs" />
+    <Compile Include="Assets\_Scripts\Editor\TopMenuEditor.cs" />
     <Compile Include="Assets\_Scripts\Editor\OptionalPropertyDrawer.cs" />
     <Compile Include="Assets\_Scripts\Editor\TransformEditor.cs" />
-    <Compile Include="Assets\_Scripts\Editor\TopMenuEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -900,47 +900,47 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{2E27191E-DC88-2090-5E30-96A7EBC472F0}</Project>
+      <Project>{9AE9B324-11C0-7158-1053-96562D2B36AA}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
-      <Project>{EF5793EA-8965-B721-E7F7-5729168E9F93}</Project>
+      <Project>{12FA6A7E-9C4B-BEDB-7BA2-671DB19D155D}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
-      <Project>{0867A76E-14A6-3B41-5555-FCD9DA4C0472}</Project>
+      <Project>{0A3F31CB-590C-5B21-5AA4-A4D47BF66CA3}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{3D6CCE41-5E35-44C5-7255-EDA3C374682B}</Project>
+      <Project>{656327A3-8F64-5217-9B3B-B1BEC0C98194}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
-      <Project>{7095F22A-B5E5-FF04-D6AE-EBD3C168CC76}</Project>
+      <Project>{B6BCA7E8-E7E9-2A75-06DC-61DB56179A69}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{EC242081-5C3A-DF96-070D-E85AA7B468B0}</Project>
+      <Project>{ED26EFDB-3967-F3B3-9FBB-8802A02C90F9}</Project>
       <Name>NavMeshComponents</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{6200AF2A-307D-2C0E-C989-3DF83A019A5D}</Project>
+      <Project>{DA9AC3AD-01B8-C934-2C7E-531BF6F7A1F2}</Project>
       <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
-      <Project>{CE917B43-528B-09E8-7F79-827B6CD31742}</Project>
+      <Project>{59D8B7BD-2485-7E78-9142-F4FF9BDA0379}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.DavidFDev.DevConsole.csproj">
-      <Project>{BE93040C-6C1F-122B-E167-0DB6501B5C17}</Project>
+      <Project>{1D43EDAF-AB0B-1A4D-6332-95482913111B}</Project>
       <Name>Unity.DavidFDev.DevConsole</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{02DAE110-A8DF-F592-C4E0-474B153D6C3B}</Project>
+      <Project>{43431743-C90C-EE63-471C-3504FCDA7AEF}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{A180A405-9B63-E779-81AA-0F53B4A2976E}</Project>
+      <Project>{A0DC6D69-CBB3-CDDA-857C-E7D508D87DD9}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
   </ItemGroup>

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BE93040C-6C1F-122B-E167-0DB6501B5C17}</ProjectGuid>
+    <ProjectGuid>{1D43EDAF-AB0B-1A4D-6332-95482913111B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.DavidFDev.DevConsole</AssemblyName>
