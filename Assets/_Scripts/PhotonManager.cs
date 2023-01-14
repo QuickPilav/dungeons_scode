@@ -191,7 +191,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             Debug.Log($"<color=lime>creating a {publicPrivateText} lobby.</color>");
 
             IsJoiningRoom = true;
-            PhotonNetwork.CreateRoom(null, new RoomOptions() { MaxPlayers = MAX_PLAYERS, IsOpen = true, IsVisible = isPublic, CustomRoomProperties = GetDefaultHash(), CustomRoomPropertiesForLobby = new string[] { ROOM_OWNER_NAME_KEY } }, TypedLobby.Default);
+            PhotonNetwork.CreateRoom(null, new RoomOptions() { MaxPlayers = 31, IsOpen = true, IsVisible = isPublic, CustomRoomProperties = GetDefaultHash(), CustomRoomPropertiesForLobby = new string[] { ROOM_OWNER_NAME_KEY } }, TypedLobby.Default);
             OnStartedJoiningRoom?.Invoke();
             yield break;
         }
