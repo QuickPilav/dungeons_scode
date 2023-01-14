@@ -397,7 +397,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &2159712176581735325
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -414,7 +414,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &1905708416454004045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f95a99ce99a08fc49b1ec0d864fe5dc2, type: 3}
