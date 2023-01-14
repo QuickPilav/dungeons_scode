@@ -15,6 +15,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         SteamId,
     }
 
+    const int MAX_PLAYERS = 3;
+
     public static InstantEvent OnConnectedToPhoton = new InstantEvent(() => IsConnected, false);
 
     /// <summary>Oda adýný döner.</summary>
@@ -189,7 +191,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             Debug.Log($"<color=lime>creating a {publicPrivateText} lobby.</color>");
 
             IsJoiningRoom = true;
-            PhotonNetwork.CreateRoom(null, new RoomOptions() { MaxPlayers = 4, IsOpen = true, IsVisible = isPublic, CustomRoomProperties = GetDefaultHash(), CustomRoomPropertiesForLobby = new string[] { ROOM_OWNER_NAME_KEY } }, TypedLobby.Default);
+            PhotonNetwork.CreateRoom(null, new RoomOptions() { MaxPlayers = MAX_PLAYERS, IsOpen = true, IsVisible = isPublic, CustomRoomProperties = GetDefaultHash(), CustomRoomPropertiesForLobby = new string[] { ROOM_OWNER_NAME_KEY } }, TypedLobby.Default);
             OnStartedJoiningRoom?.Invoke();
             yield break;
         }
