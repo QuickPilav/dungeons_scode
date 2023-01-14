@@ -41,11 +41,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     public bool IsPlayer => true;
     public bool IsInvisible
     {
-        get => isInvisible
-#if UNITY_EDITOR
-            || isInvincible
-#endif
-            ;
+        get => isInvisible || godMode;
         set
         {
             //this sets isInvisible to state
@@ -259,9 +255,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     private Optional<IEnumerator> speedBuffRoutine;
     private Collider[] sphereCastCols;
 
-#if UNITY_EDITOR
-    private bool isInvincible;
-#endif
+    private bool godMode;
     private bool cantTakeDamage;
     private bool classInitialized;
     private bool isInvisible;
@@ -493,13 +487,6 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
         {
             classHandler.AbilityBar += 50;
         }
-#if UNITY_EDITOR
-        else if (Input.GetKeyDown(KeyCode.F5))
-        {
-            isInvincible = !isInvincible;
-            Debug.LogError("ölümsüzlük deðiþti!");
-        }
-#endif
 
         InputPayload lastInput = playerInput.Get(inControl, inMouseControl);
         Vector3 mousePos = HandleMousePosition(lastInput);
@@ -940,10 +927,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
         if (cantTakeDamage || IsDead || groundedState.IsSwingingAxe || groundedState.IsGettingUp)
             return;
 
-#if UNITY_EDITOR
-        if (isInvincible)
+        if (godMode)
             return;
-#endif
 
         Health -= amount;
 
@@ -998,5 +983,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     {
         noclip = !noclip;
         Debug.Log($"noclip is now set to {noclip}");
+    }
+    public void ToggleGodMode ()
+    {
+        godMode = !godMode;
+        Debug.Log($"god mode is now set to {godMode}");
     }
 }

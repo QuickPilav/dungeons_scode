@@ -38,6 +38,12 @@ public static class ConsoleHandler
             DevConsole.AddCommand(Command.Create("fly",
                 "noclip",
                 "Disables collisions so you can fly",Noclip));
+
+            DevConsole.AddCommand(Command.Create("god",
+                "",
+                "Toggles invincibility for your character", GodMode));
+
+            DevConsole.AddCommand(Command.Create<string>("summon","","Summons a creature", Parameter.Create("entityName","Entity name to create"),SummonCreature));
         }
 
         DevConsole.OnConsoleOpened += DevConsole_OnConsoleOpened;
@@ -45,6 +51,26 @@ public static class ConsoleHandler
 
         ClientUI.OnGamePaused += Instance_OnGamePaused;
         ClientUI.OnGameContinued += Instance_OnGameContinued;
+    }
+
+    private static void SummonCreature(string creatureName)
+    {
+        if (!PlayerController.ClientInstance.Enabled)
+        {
+            return;
+        }
+
+        Vector3 spawnPoint = CameraSystem.Instance.MousePos;
+
+        creatureName = creatureName.ToLower();
+
+        foreach (var item in Enum.GetValues(typeof(Enemies)))
+        {
+            if(item.ToString().ToLower() == creatureName)
+            {
+                SpawnManager.Instance.SpawnEnemy<EnemyAI>((Enemies)item, spawnPoint, Quaternion.identity);
+            }
+        }
     }
 
     private static void Noclip()
@@ -55,7 +81,16 @@ public static class ConsoleHandler
         }
 
         PlayerController.ClientInstance.Value.ToggleClipping();
+    }
 
+    private static void GodMode()
+    {
+        if (!PlayerController.ClientInstance.Enabled)
+        {
+            return;
+        }
+
+        PlayerController.ClientInstance.Value.ToggleGodMode();
     }
 
     private static void DevConsole_OnConsoleClosed()

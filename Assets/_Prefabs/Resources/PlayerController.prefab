@@ -3597,8 +3597,20 @@ MonoBehaviour:
       - {fileID: 195254802476264632}
       - {fileID: 7149117712160068817}
       - {fileID: 3720554657607610974}
-      turkishSounds: []
-      englishSounds: []
+      turkishSounds:
+      - {fileID: 8300000, guid: 429e244e5dbde4f45884476f7c1e8a9c, type: 3}
+      - {fileID: 8300000, guid: b3c33fdc2ea899e4f91ace765ef542c1, type: 3}
+      - {fileID: 8300000, guid: 5e17959f1f7130d4cb10931ba91b4923, type: 3}
+      - {fileID: 8300000, guid: 4ac9e3ee2979c754faf1468e51cf932f, type: 3}
+      - {fileID: 8300000, guid: 4e2a0f3fc5ed4ba4c94fcbfb58c6cfa0, type: 3}
+      - {fileID: 8300000, guid: 137d5eabd051f0840ad4ae0b79ae18a5, type: 3}
+      englishSounds:
+      - {fileID: 8300000, guid: 0cf9aa5878ec85b4388b49f9ecc25fcb, type: 3}
+      - {fileID: 8300000, guid: 3639f3ce7d2de734cabf90cee590bfd3, type: 3}
+      - {fileID: 8300000, guid: 4d9447250a2d2a64581f807a0ea04804, type: 3}
+      - {fileID: 8300000, guid: 5e23a9a9c7e394847b1c38be14d015e7, type: 3}
+      - {fileID: 8300000, guid: 3b116a292dd8dfb4e971338659d39691, type: 3}
+      - {fileID: 8300000, guid: 29d38107453c1c645ae7ff48a6035ade, type: 3}
       additiveDamageMultiplierToProximity: 0.1
     classVlonderz:
       bulletPenetrationAdditive: 0

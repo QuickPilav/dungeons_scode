@@ -47,8 +47,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BulgeWidth: 650
-    - _Distance: 5.086464
+    - _BulgeWidth: 1500
+    - _Distance: 18.847834
     - _Panner: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0

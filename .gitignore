@@ -3,6 +3,7 @@ Logs/
 obj/
 UserSettings/
 .vs/
+Temp/
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
 dungeons_scode.sln
@@ -30,3 +31,4 @@ PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj
 Unity.DavidFDev.DevConsole.csproj
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
+*.meta

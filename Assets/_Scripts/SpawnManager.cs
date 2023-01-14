@@ -132,12 +132,14 @@ public class SpawnManager : MonoBehaviourPun
 
     public T SpawnEnemy<T>(Enemies enemyType, Transform spawnPoint) where T : EnemyAI
     {
+        return SpawnEnemy<T>(enemyType, spawnPoint.position, spawnPoint.rotation);
+    }
+
+    public T SpawnEnemy<T> (Enemies enemyType, Vector3 pos, Quaternion rot) where T : EnemyAI
+    {
         var prefabToSpawn = enemySpawns[(int)enemyType].EnemyPrefab;
-        /*
-        Vector3 rand = Vector3.zero;//(Random.insideUnitSphere * 2);
-        rand.y = 0;
-        */
-        var spawned = PhotonNetwork.Instantiate(prefabToSpawn.name, spawnPoint.position/* + rand*/, spawnPoint.rotation);
+
+        var spawned = PhotonNetwork.Instantiate(prefabToSpawn.name, pos, rot);
 
         return spawned.GetComponent<T>();
     }
