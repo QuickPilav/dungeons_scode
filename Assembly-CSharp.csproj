@@ -208,6 +208,10 @@
     <Compile Include="Assets\_Scripts\Enemies\States\EnemyStateAttacking.cs" />
     <Compile Include="Assets\_Scripts\Enemies\States\EnemyStateAnimation.cs" />
     <Compile Include="Assets\_Scripts\SinWave.cs" />
+    <Compile Include="Assets\_Scripts\Minimap\MinimapSystem.cs" />
+    <Compile Include="Assets\_Scripts\Minimap\MinimapMarker.cs" />
+    <Compile Include="Assets\_Scripts\Player\PlayerControllerMinimap.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\MinimapUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

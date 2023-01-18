@@ -104,12 +104,20 @@ public struct SettingsSave
     public bool autoAim;
     public bool toggleAds;
     public Language language;
+    public MinimapSettings minimapSettings;
 }
 
 [System.Serializable]
 public struct Stats
 {
     public int WavesSurvived;
+}
+
+[System.Serializable]
+public struct MinimapSettings
+{
+    /// <summary>0-1 arasý</summary>
+    public float zoom;
 }
 
 [System.Serializable]
@@ -135,6 +143,10 @@ public class SaveData
                 autoAim = true,
                 fullscreen = true,
                 resIndex = 0,
+                minimapSettings = new MinimapSettings()
+                {
+                    zoom = 0
+                }
             },
             unlockedCharacters = CharactersUI.UnlockablePlayerClasses.classMami,
             missionsSaved = new MissionHandler.MissionSaveData[0],
@@ -144,6 +156,7 @@ public class SaveData
             {
                 WavesSurvived = 0,
             },
+
         };
     }
 }

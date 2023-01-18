@@ -26,6 +26,7 @@ public static class ConsoleHandler
 
         if (Debug.isDebugBuild)
         {
+            /*
             DevConsole.SetTrackedStat("IsConnecting", () => PhotonManager.IsConnecting, true);
             DevConsole.SetTrackedStat("IsConnected", () => PhotonManager.IsConnected, true);
             DevConsole.SetTrackedStat("InRoom", () => PhotonManager.InRoom, true);
@@ -34,7 +35,7 @@ public static class ConsoleHandler
             DevConsole.SetTrackedStat("Photon.OfflineMode", () => PhotonNetwork.OfflineMode, true);
             DevConsole.SetTrackedStat("Photon.IsConnectedAndReady", () => PhotonNetwork.IsConnectedAndReady, true);
             DevConsole.SetTrackedStat("Photon.IsConnected", () => PhotonNetwork.IsConnected, true);
-
+            */
             DevConsole.AddCommand(Command.Create("fly",
                 "noclip",
                 "Disables collisions so you can fly",Noclip));
