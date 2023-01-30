@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b013f62d547dd4689cd80e1718db63, type: 3}
+  m_Name: description_vlonderz
+  m_EditorClassIdentifier: 
+  translations:
+  - "En B\xFCy\xFCk Hayali Bir Okul Maskotu Olmak \u0130steyen Yusuf Evde Kendi Yapt\u0131\u011F\u0131
+    Kost\xFCm\xFC Giyerek Etraf\u0131ndaki \u0130nsanlar\u0131 E\u011Flendirmeye
+    Bay\u0131l\u0131r. En Sevdi\u011Fi \u015Eey Kost\xFCm\xFCd\xFCr."
+  - Yusuf, whose biggest dream is to be a school mascot, loves to entertain the people
+    around him by wearing his own costume at home. Her Favorite Thing Is Her Costume.

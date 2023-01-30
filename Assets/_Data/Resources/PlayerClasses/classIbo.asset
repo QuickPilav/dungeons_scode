@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerClass: 2
   visualName: Ibo
-  description: "Polis Genel M\xFCd\xFCrl\xFC\u011F\xFCnde G\xFCvenlik Olan IBO \xDCst\xFCndeki
-    Z\u0131rh Y\xFCz\xFCnden Pek H\u0131zl\u0131 Hareket Edemez Ancak Derisi \xC7ok
-    Dayan\u0131kl\u0131d\u0131r Ve Kolay Kolay Ac\u0131y\u0131 Hissetmez."
+  descriptionScriptable: {fileID: 11400000, guid: 9f5a66ade1322484e9215282cf1abee7, type: 2}
   pointsCost: 100

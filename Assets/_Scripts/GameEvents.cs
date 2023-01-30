@@ -40,4 +40,11 @@ public static class GameEvents
     public static InstantEvent OnGameSceneLoaded = new InstantEvent(() => GameState == Game_State.GameScene, false);
     public static InstantEvent OnMainMenuLoaded = new InstantEvent(() => GameState == Game_State.MainMenu, false);
     public static Action OnQuitGame { get; private set; }
+
+    public static void Quit()
+    {
+        Debug.Log("Oyun kapandý!");
+        OnQuitGame?.Invoke();
+        Application.Quit();
+    }
 }

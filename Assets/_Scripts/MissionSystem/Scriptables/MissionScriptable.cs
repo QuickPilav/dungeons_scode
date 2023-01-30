@@ -5,8 +5,8 @@ public abstract class MissionScriptable : ScriptableObject
     public string missionId;
 
     [SerializeField] protected bool activatedByDefault;
-    [SerializeField] protected string missionName;
+    [SerializeField] protected TranslationScriptable missionName;
 
-    [SerializeField, TextArea] protected string missionDescription;
+    [SerializeField] protected TranslationScriptable missionDescription;
     public abstract MissionBase GetMission();
 }

@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerClass: 3
   visualName: VLondeRz
-  description: "En B\xFCy\xFCk Hayali Bir Okul Maskotu Olmak \u0130steyen Yusuf Evde
-    Kendi Yapt\u0131\u011F\u0131 Kost\xFCm\xFC Giyerek Etraf\u0131ndaki \u0130nsanlar\u0131
-    E\u011Flendirmeye Bay\u0131l\u0131r. En Sevdi\u011Fi \u015Eey Kost\xFCm\xFCd\xFCr."
+  descriptionScriptable: {fileID: 11400000, guid: 01ac8a89c7452ae468d2ca4654dc8121, type: 2}
   pointsCost: 120

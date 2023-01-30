@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39fd3f74cc0a844c844547a241de2c2, type: 3}
+  m_Name: popup_return_to_lobby
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 11400000, guid: 8464778e8cac81d4b885f863d49f972e, type: 2}
+  descriptionText: {fileID: 11400000, guid: 0b2eb8b67859a2742bf8f76154a4501d, type: 2}
+  yesText: {fileID: 11400000, guid: 07716698054fdf545865065d53635129, type: 2}
+  noText: {fileID: 11400000, guid: 7fafc0e45b90f294da3e793ab0684d3b, type: 2}
+  haveYesButton: 1
+  haveNoButton: 1
+  haveCloseButton: 1
+  isNotification: 0

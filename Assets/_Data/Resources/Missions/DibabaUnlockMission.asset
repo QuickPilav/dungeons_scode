@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionId: dibaba
   activatedByDefault: 1
-  missionName: Dibaba
-  missionDescription: "45 Dalga hayatta kalarak Dibaba'n\u0131n kilidini a\xE7!"
+  missionName: {fileID: 11400000, guid: e0c56079be86d6b4ebfe7651898545b6, type: 2}
+  missionDescription: {fileID: 11400000, guid: 28cfffb5d85c31e43983461f8b01c686, type: 2}
   waveReachAmount: 45
   classToUnlock: {fileID: 11400000, guid: 7e6091b05ca1043439381e38dae9ddbf, type: 2}

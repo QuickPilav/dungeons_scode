@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b013f62d547dd4689cd80e1718db63, type: 3}
+  m_Name: description_ibo
+  m_EditorClassIdentifier: 
+  translations:
+  - "Polis Genel M\xFCd\xFCrl\xFC\u011F\xFCnde G\xFCvenlik Olan IBO \xDCst\xFCndeki
+    Z\u0131rh Y\xFCz\xFCnden Pek H\u0131zl\u0131 Hareket Edemez Ancak Derisi \xC7ok
+    Dayan\u0131kl\u0131d\u0131r Ve Kolay Kolay Ac\u0131y\u0131 Hissetmez."
+  - The IBO, which is the security at the Police Headquarters, cannot move very quickly
+    because of the armor on it, but its skin is very durable and does not easily
+    feel pain.

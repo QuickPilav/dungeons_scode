@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -74,7 +73,7 @@ public class ClientUI : Singleton<ClientUI>
     [SerializeField] private CanvasGroup fade;
     [SerializeField] private GameObject loadingMenu;
     public GameObject normalPauseMenu;
-    
+
     protected override void Awake()
     {
         base.Awake();
@@ -102,7 +101,7 @@ public class ClientUI : Singleton<ClientUI>
             IsPauseMenuOpen = false;
         }
 
-        
+
         loadingMenu.SetActive(next.buildIndex == (int)Game_State.Init);
     }
     public void Initialize()
@@ -135,9 +134,9 @@ public class ClientUI : Singleton<ClientUI>
         lastWasPaused = isPausedNow;
         lastMouseWasPaused = isMousePausedNow;
 
-        if(lastLastWasPaused != lastWasPaused)
+        if (lastLastWasPaused != lastWasPaused)
         {
-            if(lastWasPaused)
+            if (lastWasPaused)
             {
                 OnGamePaused?.Invoke();
             }
@@ -256,13 +255,14 @@ public class ClientUI : Singleton<ClientUI>
                 settingsInstance.IsSettingsMenuOpen = true;
                 break;
             case ButtonFunctionsEnum.QuitPrompt:
-                PopupInstance.ShowAreYouSurePopup(
-                    PopupManager.M_SURE_WANT_TO_QUIT, () =>
+                PopupInstance.ShowPopup(
+                    Popups.QuitPrompt,
+                    () =>
                     {
-                        GameEvents.OnQuitGame?.Invoke();
-                        Application.Quit();
-                        Debug.Log("Oyun kapandý!");
-                    }, null, false);
+
+                        GameEvents.Quit();
+                        
+                    }, null);
                 break;
             case ButtonFunctionsEnum.CloseSettings:
                 settingsInstance.IsSettingsMenuOpen = false;
@@ -272,11 +272,12 @@ public class ClientUI : Singleton<ClientUI>
                 break;
 
             case ButtonFunctionsEnum.BuyCharacterPrompt:
-                PopupInstance.ShowAreYouSurePopup(
-                    PopupManager.M_SURE_WANT_TO_BUY, () =>
+                PopupInstance.ShowPopup(
+                    Popups.BuyPrompt,
+                    () =>
                     {
                         MainMenuUI.Instance.BuyCharacter_Btn();
-                    }, null,false);
+                    }, null);
                 break;
         }
     }

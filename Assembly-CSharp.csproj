@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\DroppedGem.cs" />
     <Compile Include="Assets\_Scripts\Language\LabeledArrayAttribute.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\_Scripts\Enemies\Frog.cs" />
     <Compile Include="Assets\_Scripts\Language\LanguageText.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerAnimations.cs" />
+    <Compile Include="Assets\_Scripts\Minimap\MinimapMarker.cs" />
     <Compile Include="Assets\_Scripts\InventorySlotUI.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\ThrowProjectile.cs" />
     <Compile Include="Assets\_Scripts\Inventory\InventorySystem.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Assets\_Scripts\Inventory\ResourceManager.cs" />
     <Compile Include="Assets\_Scripts\Enemies\States\EnemyStateBase.cs" />
     <Compile Include="Assets\_Scripts\Bootstrap\ConsoleHandler.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\MinimapUI.cs" />
     <Compile Include="Assets\_Scripts\SceneLoadeds\GameScene.cs" />
     <Compile Include="Assets\ToxicEnvironmentEffects\Sources\Scripts\MeshCombineUtility.cs" />
     <Compile Include="Assets\_Scripts\Bootstrap\Popup.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="Assets\_Scripts\Gameplay\ToxicGas.cs" />
     <Compile Include="Assets\_Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\_Scripts\Player\CameraSystem.cs" />
+    <Compile Include="Assets\_Scripts\Player\PlayerControllerMinimap.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\RandomPickup.cs" />
     <Compile Include="Assets\_Scripts\GameEvents.cs" />
     <Compile Include="Assets\_Scripts\FixedRotation.cs" />
@@ -117,7 +121,6 @@
     <Compile Include="Assets\_Scripts\MainMenu\ButtonFunctions.cs" />
     <Compile Include="Assets\_Scripts\Enemies\EnemyDamageHitbox.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\StartGameButton.cs" />
-    <Compile Include="Assets\_Scripts\Language\Code\SearchableEnumDemo.cs" />
     <Compile Include="Assets\_Scripts\PhotonManager.cs" />
     <Compile Include="Assets\_Scripts\MissionSystem\MissionVisualizer.cs" />
     <Compile Include="Assets\_Scripts\HeroSelectorUI.cs" />
@@ -187,12 +190,14 @@
     <Compile Include="Assets\_Scripts\ToggleFunctions.cs" />
     <Compile Include="Assets\_Scripts\Bootstrap\PopupManager.cs" />
     <Compile Include="Assets\_Scripts\Bootstrap\App.cs" />
+    <Compile Include="Assets\_Scripts\Language\TranslationScriptable.cs" />
     <Compile Include="Assets\_Scripts\Shop\ShopInteractable.cs" />
     <Compile Include="Assets\_Scripts\MissionSystem\Scriptables\MissionScriptableCharacterUnlock.cs" />
     <Compile Include="Assets\_Scripts\MissionSystem\Scriptables\MissionScriptable.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\PoolObject.cs" />
     <Compile Include="Assets\_Scripts\Volume2D.cs" />
     <Compile Include="Assets\_Scripts\Enemies\States\EnemyStateWalking.cs" />
+    <Compile Include="Assets\_Scripts\Language\PopupTranslationScriptable.cs" />
     <Compile Include="Assets\_Scripts\Shop\ShopItemScriptable.cs" />
     <Compile Include="Assets\_Scripts\Language\LanguageHandler.cs" />
     <Compile Include="Assets\_Scripts\Enemies\Slime.cs" />
@@ -209,9 +214,6 @@
     <Compile Include="Assets\_Scripts\Enemies\States\EnemyStateAnimation.cs" />
     <Compile Include="Assets\_Scripts\SinWave.cs" />
     <Compile Include="Assets\_Scripts\Minimap\MinimapSystem.cs" />
-    <Compile Include="Assets\_Scripts\Minimap\MinimapMarker.cs" />
-    <Compile Include="Assets\_Scripts\Player\PlayerControllerMinimap.cs" />
-    <Compile Include="Assets\_Scripts\Gameplay\MinimapUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

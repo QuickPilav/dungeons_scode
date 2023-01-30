@@ -50,7 +50,8 @@ public class ProgressionSystem : MonoBehaviour
         {
             //SEVITE ATLADIN
             SaveSocket.CurrentSave.points += visual.currentLevel.coinGives;
-            ClientUI.PopupInstance.ShowOnlyTextPopup("TEBRÝKLER!", $"{visual.currentLevelString} level oldun ve {visual.currentLevel.coinGives}<sprite=0> kazandýn!", true, 5);
+            //ClientUI.PopupInstance.ShowOnlyTextPopup("TEBRÝKLER!", $"{visual.currentLevelString} level oldun ve {visual.currentLevel.coinGives}<sprite=0> kazandýn!", true, 5);
+            ClientUI.PopupInstance.ShowPopup(Popups.LevelUp,null,null,5, visual.currentLevelString.ToString(), visual.currentLevel.coinGives.ToString());
         }
 
         SaveSocket.CurrentSave.xp = loadedExperience;

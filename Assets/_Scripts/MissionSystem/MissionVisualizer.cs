@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -15,15 +16,29 @@ public class MissionVisualizer : MonoBehaviour
     [SerializeField] private GameObject notCompleted;
     [SerializeField] private GameObject completed;
 
+    private MissionBase mBase;
+
 
     private void Start()
     {
         MissionHandler.OnMissionsLoaded.SubscribeToEvent(OnMissionsLoaded);
+        SaveSocket.OnSettingsChanged.SubscribeToEvent(OnSettingsChanged);
     }
-
     private void OnDestroy()
     {
         MissionHandler.OnMissionsLoaded.UnsubscribeToEvent(OnMissionsLoaded);
+        SaveSocket.OnSettingsChanged.UnsubscribeToEvent(OnSettingsChanged);
+    }
+
+    private void OnSettingsChanged(SettingsSave settings)
+    {
+        if (mBase == null)
+            return;
+
+        var visual = mBase.GetVisual();
+
+        missionDescriptionText.text = visual.missionDescription.GetTranslationOf(settings.language);
+        missionNameText.text = visual.missionName.GetTranslationOf(settings.language);
     }
 
     private void OnMissionsLoaded(Dictionary<string, MissionBase> missions)
@@ -36,10 +51,14 @@ public class MissionVisualizer : MonoBehaviour
             return;
         }
 
+        mBase = m;
+
         var visual = m.GetVisual();
 
-        missionDescriptionText.text = visual.missionDescription;
-        missionNameText.text = visual.missionName;
+        var lng = SaveSocket.CurrentSave.settings.language;
+
+        missionDescriptionText.text = visual.missionDescription.GetTranslationOf(lng);
+        missionNameText.text = visual.missionName.GetTranslationOf(lng);
         missionSliderText.text = $"{visual.currentValue}/{visual.targetValue}";
 
         missionSlider.minValue = 0;

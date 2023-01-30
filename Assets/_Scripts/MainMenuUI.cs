@@ -1,10 +1,7 @@
-using Photon.Pun;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 
 public class MainMenuUI : StaticInstance<MainMenuUI>
 {
@@ -56,9 +53,9 @@ public class MainMenuUI : StaticInstance<MainMenuUI>
         PhotonManager.OnConnectedToPhoton.SubscribeToEvent(OnConnectedtoPhoton);
         SaveSocket.OnSaveDataLoadedForTheFirstTime.SubscribeToEvent(OnSaveLoaded);
 
-        if(!SteamManager.Initialized)
+        if (!SteamManager.Initialized)
         {
-            ClientUI.PopupInstance.ShowOKPopup("Steam is not initialized", "Press OK to quit", () => Application.Quit(), false);
+            ClientUI.PopupInstance.ShowPopup(Popups.SteamNotInitialized, () => GameEvents.Quit(), null);
         }
     }
 
@@ -126,7 +123,7 @@ public class MainMenuUI : StaticInstance<MainMenuUI>
         IEnumerator enumerator()
         {
             yield return PhotonManager.NotConnecting;
-            
+
             /*
             if (PhotonManager.IsConnected)
             {

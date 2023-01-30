@@ -111,10 +111,10 @@ public class MissionBase
         public int currentValue;
         public int targetValue;
 
-        public string missionName;
-        public string missionDescription;
+        public TranslationScriptable missionName;
+        public TranslationScriptable missionDescription;
 
-        public MissionVisual(bool isCompleted,string missionName, string missionDescription)
+        public MissionVisual(bool isCompleted, TranslationScriptable missionName, TranslationScriptable missionDescription)
         {
             this.isCompleted = isCompleted;
             this.missionName = missionName;

@@ -14,8 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerClass: 5
   visualName: Amy
-  description: "Amy Okulun Son S\u0131n\u0131f Hem\u015Fire \xD6\u011Frencisidir.
-    Okulda Zamanla Olu\u015Fan T\u0131bbi \u0130htiya\xE7larda \xC7ok\xE7a Amy\u2019den
-    Yard\u0131m Al\u0131n\u0131rd\u0131 Nede Olsa Alan\u0131n\u0131n En \u0130yi
-    \xD6\u011Frencisiydi. Yani Eddie\u2019den Sonra."
+  descriptionScriptable: {fileID: 11400000, guid: 69bd089d42e46374495859ec72fe79d3, type: 2}
   pointsCost: 50

@@ -34,28 +34,26 @@ public class CharactersUI
     public void Initialize()
     {
         buyButtonText = buyCharacterButton.GetComponentInChildren<LanguageTextExtra>();
-        SaveSocket.OnSaveDataLoadedForTheFirstTime.SubscribeToEvent(OnSaveLoaded);
+        SaveSocket.OnSettingsChanged.SubscribeToEvent(OnSettingsChanged);
     }
-
     public void Dispose()
     {
-        SaveSocket.OnSaveDataLoadedForTheFirstTime.UnsubscribeToEvent(OnSaveLoaded);
+        SaveSocket.OnSettingsChanged.UnsubscribeToEvent(OnSettingsChanged);
     }
 
-    private void OnSaveLoaded(SaveData saveData)
+
+    private void OnSettingsChanged(SettingsSave settings)
     {
-        SelectCharacter(PlayerClass.classMami);
-
-
-        foreach (var item in saveData.unlockedCharacters.GetFlags())
+        if (selectedClass != null)
         {
-            if (item is UnlockablePlayerClasses.None)
-                continue;
-
-
+            SelectCharacter(selectedClass.playerClass);
         }
-
+        else
+        {
+            SelectCharacter(PlayerClass.classMami);
+        }
     }
+
 
     public void SelectCharacter(PlayerClass plyClass)
     {
@@ -70,7 +68,7 @@ public class CharactersUI
 
 
         classNameText.text = plyStats.visualName;
-        classDescriptionText.text = plyStats.description;
+        classDescriptionText.text = plyStats.descriptionScriptable.GetTranslationOf(SaveSocket.CurrentSave.settings.language);
 
         bool isCharacterUnlocked = SaveSocket.CurrentSave.unlockedCharacters.CustomHasFlag(plyClass.ConvertToUnlockable());
 
@@ -80,7 +78,7 @@ public class CharactersUI
 
         bool isButtonVisible = plyStats.pointsCost != -1 && !isCharacterUnlocked;
         buyCharacterButton.gameObject.SetActive(isButtonVisible);
-        if(isButtonVisible)
+        if (isButtonVisible)
         {
             //karakter açýk deðil ise alma tuþunu aktif et...
             buyCharacterButton.interactable = buttonInteractable;
@@ -105,7 +103,7 @@ public class CharactersUI
     {
         SaveSocket.CurrentSave.points -= plyClass.pointsCost;
 
-        UnlockCharacter(plyClass,true);
+        UnlockCharacter(plyClass, true);
 
         MainMenuUI.Instance.DeductPointsSlowly(plyClass.pointsCost);
 
@@ -115,12 +113,13 @@ public class CharactersUI
     public static void UnlockCharacter(PlayerClassScriptable plyClass, bool save)
     {
         SaveSocket.CurrentSave.unlockedCharacters = SaveSocket.CurrentSave.unlockedCharacters.Add(plyClass.playerClass.ConvertToUnlockable());
-        if(save)
+        if (save)
         {
             SaveSocket.Save();
         }
 
-        ClientUI.PopupInstance.ShowOnlyTextPopup("Yeni Karakter eklendi.", $"{plyClass.visualName} karakteri baþarýyla eklendi!", true, 5f);
+        //ClientUI.PopupInstance.ShowPopup(Popups.NewCharacterUnlocked, $"{plyClass.visualName} karakteri baþarýyla eklendi!", true, 5f);
+        ClientUI.PopupInstance.ShowPopup(Popups.NewCharacterUnlocked, null, null, 5f, plyClass.visualName);
 
     }
 

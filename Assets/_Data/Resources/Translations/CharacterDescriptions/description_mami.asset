@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b013f62d547dd4689cd80e1718db63, type: 3}
+  m_Name: description_mami
+  m_EditorClassIdentifier: 
+  translations:
+  - "10.S\u0131n\u0131f \xD6\u011Frecisi Olan Mami, Okulda \xC7ok Pop\xFCler Olmayan
+    Ancak S\u0131n\u0131f\u0131 Taraf\u0131ndan Sevilen Bir Ki\u015Fidir. Yapmay\u0131
+    En \xC7ok Sevdi\u011Fi \u015Eey Paras\u0131n\u0131 Biriktirip G\xFCzel \u015Eeyler
+    Elde Etmektir."
+  - As a 10th Grade Student, Mami is not very popular in school but loved by her
+    class. What he likes to do the most is to save his money and get nice things.

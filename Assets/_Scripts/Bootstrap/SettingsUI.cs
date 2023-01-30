@@ -8,6 +8,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class SettingsUI
 {
+    private const int RESOLUTION_REVERT_TIMER = 11;
+
     public enum SliderSettings
     {
         Sensitivity,
@@ -34,7 +36,7 @@ public class SettingsUI
         {
             if (!value && changesMade)
             {
-                ClientUI.PopupInstance.ShowAreYouSurePopup("Deðiþiklikleri kaydetmek istediðine emin misin?"
+                ClientUI.PopupInstance.ShowPopup(Popups.ChangesPrompt
                 , OnClickedYes: () =>
                 {
                     changesMade = false;
@@ -49,7 +51,7 @@ public class SettingsUI
                     IsSettingsMenuOpen = false;
 
                     RevertSettings(SaveSocket.CurrentSave.settings);
-                }, isNotification: false);
+                });
                 return;
             }
 
@@ -168,11 +170,9 @@ public class SettingsUI
                 var res = resolutionsLoaded[newSetting];
                 SetResolution(res);
 
+
                 ClientUI.PopupInstance.ShowPopup(
-                    PopupManager.T_SURE_TEXT,
-                    "Emin Misin?",
-                    "Uygula",
-                    "Geri al",
+                    Popups.ResolutionPrompt,
                     () =>
                     {
                         //yes
@@ -184,16 +184,8 @@ public class SettingsUI
                         //no
                         SetResolution(oldRes);
                         resolutionSetting.SetValueWithoutNotify(oldResIndex);
-
                     },
-                    true,
-                    true,
-                    true,
-                    false,
-                    10
-                    );
-
-
+                    RESOLUTION_REVERT_TIMER, RESOLUTION_REVERT_TIMER.ToString());
                 break;
         }
 

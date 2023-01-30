@@ -400,7 +400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: STEAM NAEM HERE
+  m_text: <steam name>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7e05982e0b738a4ea5fd5caaf653fce, type: 2}
   m_sharedMaterial: {fileID: 7823631492938502624, guid: f7e05982e0b738a4ea5fd5caaf653fce, type: 2}
@@ -3823,6 +3823,7 @@ PrefabInstance:
     - {fileID: 6035348221698928252, guid: 36a738f7424426247b7cfda0a3b98e10, type: 3}
     - {fileID: 1053832750, guid: 36a738f7424426247b7cfda0a3b98e10, type: 3}
     - {fileID: 3845421699110661113, guid: 36a738f7424426247b7cfda0a3b98e10, type: 3}
+    - {fileID: 414936964, guid: 36a738f7424426247b7cfda0a3b98e10, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36a738f7424426247b7cfda0a3b98e10, type: 3}
 --- !u!1 &820530557
 GameObject:

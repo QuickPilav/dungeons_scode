@@ -21,11 +21,11 @@ public class ButtonFunctions : MonoBehaviour
                 break;
             case ClientUI.ButtonFunctionsEnum.ReturnToMainMenuPrompt:
 
-                PopupInstance.ShowAreYouSurePopup(
-                    PopupManager.M_SURE_WANT_TO_LEAVE, () =>
+                PopupInstance.ShowPopup(
+                    Popups.LeavePrompt, () =>
                     {
                         ReturnToMainMenu();
-                    }, null, false);
+                    }, null);
 
                 break;
             case ClientUI.ButtonFunctionsEnum.ReturnToMainMenu:

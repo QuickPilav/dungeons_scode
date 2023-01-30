@@ -14,8 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerClass: 0
   visualName: Mami
-  description: "10.S\u0131n\u0131f \xD6\u011Frecisi Olan Mami, Okulda \xC7ok Pop\xFCler
-    Olmayan Ancak S\u0131n\u0131f\u0131 Taraf\u0131ndan Sevilen Bir Ki\u015Fidir.
-    Yapmay\u0131 En \xC7ok Sevdi\u011Fi \u015Eey Paras\u0131n\u0131 Biriktirip G\xFCzel
-    \u015Eeyler Elde Etmektir."
+  descriptionScriptable: {fileID: 11400000, guid: bcd9027517f4dd54fb21284acecf2897, type: 2}
   pointsCost: 0

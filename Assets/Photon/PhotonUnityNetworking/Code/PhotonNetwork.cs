@@ -453,12 +453,10 @@ namespace Photon.Pun
                     return;
                 }
 
-                
                 if (NetworkingClient.IsConnected)
                 {
                     NetworkingClient.Disconnect(); // Cleanup (also calls OnLeftRoom to reset stuff)
                 }
-                
 
                 offlineMode = value;
 

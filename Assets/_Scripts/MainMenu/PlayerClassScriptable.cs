@@ -8,8 +8,7 @@ public class PlayerClassScriptable : ScriptableObject
     public PlayerClass playerClass;
     public string visualName;
 
-    [TextArea]
-    public string description;
+    public TranslationScriptable descriptionScriptable;
 
     public int pointsCost;
 }

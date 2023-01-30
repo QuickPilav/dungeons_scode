@@ -22,6 +22,7 @@ public enum LanguageKeywords
     menu_quit,
     menu_back,
     menu_reset,
+    menu_loading,
 
     //pause menu
     menu_pause_continue = 20,

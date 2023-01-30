@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b013f62d547dd4689cd80e1718db63, type: 3}
+  m_Name: description_amy
+  m_EditorClassIdentifier: 
+  translations:
+  - "Amy Okulun Son S\u0131n\u0131f Hem\u015Fire \xD6\u011Frencisidir. Okulda Zamanla
+    Olu\u015Fan T\u0131bbi \u0130htiya\xE7larda \xC7ok\xE7a Amy\u2019den Yard\u0131m
+    Al\u0131n\u0131rd\u0131 Nede Olsa Alan\u0131n\u0131n En \u0130yi \xD6\u011Frencisiydi.
+    Yani Eddie\u2019den Sonra."
+  - Amy is a Senior Nursing Student. A lot of help was received from Amy for the
+    medical needs that developed over time at school, although she was the best student
+    in her field. So After Eddie.

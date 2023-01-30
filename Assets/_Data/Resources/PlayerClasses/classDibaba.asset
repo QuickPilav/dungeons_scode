@@ -14,8 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerClass: 4
   visualName: Dibaba
-  description: "Cemal\u2019\u0131n En Sevdi\u011Fi \u015Eey Vatan\u0131n\u0131 \xD6l\xFCm\xFCne
-    Korumakt\u0131r. Kendisi Ayr\u0131ca Bir Gazi Komutan\u0131d\u0131r. Haberlerde
-    \u0130stilay\u0131 Duydu\u011Fu Zaman Evde Eskitti\u011Fi Koltuktan Kalk\u0131p
-    Yava\u015F Hareketleriyle Bombalar\u0131na B\xFCr\xFCnd\xFC."
+  descriptionScriptable: {fileID: 11400000, guid: c62fcccc5323ff24fb028988010a1220, type: 2}
   pointsCost: -1

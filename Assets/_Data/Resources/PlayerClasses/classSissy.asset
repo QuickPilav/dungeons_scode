@@ -14,8 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerClass: 1
   visualName: Sissy
-  description: "\xDCniversite \xD6\u011Frencisi Olan S\u0131ssy Ko\u015FuYapmay\u0131
-    \xC7ok Sever. H\u0131zl\u0131 Bir Ko\u015Fucu Olan S\u0131ssy Eski Okuluna \xC7ok
-    Say\u0131da Kupa Kazand\u0131rm\u0131\u015Ft\u0131r. Ancak Kendisini \xC7okta
-    \u0130yi Korudu\u011Fu S\xF6ylenemez."
+  descriptionScriptable: {fileID: 11400000, guid: 295eb8ea2d70fd9458457efc3f78e27a, type: 2}
   pointsCost: 75
