@@ -108,7 +108,7 @@ public class ProtectPoint : MonoBehaviourPun, IDamagable
 
         if (!PhotonNetwork.IsMasterClient)
         {
-            Debug.Log("patladý ancak biz master client deðiliz");
+            //Debug.Log("patladý ancak biz master client deðiliz");
             return;
         }
 
@@ -117,7 +117,7 @@ public class ProtectPoint : MonoBehaviourPun, IDamagable
     [PunRPC]
     public void TakeDamageRpc (Player inflictor, int amount, DamageType damageType)
     {
-        Debug.Log($"{amount} hasar geldi!");
+        //Debug.Log($"{amount} hasar geldi!");
 
 
         if (!isCurrentProtectionPoint || cantTakeDamage

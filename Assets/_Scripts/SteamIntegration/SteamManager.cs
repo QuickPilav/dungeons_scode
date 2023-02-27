@@ -169,12 +169,19 @@ public class SteamManager : MonoBehaviour
             return;
         
         PhotonManager.OnJoinedToRoom.SubscribeToEvent(OnJoinedToLobby);
+        PhotonManager.OnRoomLeft += OnLeftTheRoom;
+    }
+
+    private void OnLeftTheRoom()
+    {
+        SteamFriends.SetRichPresence(CONNECT_RICH_PRESENCE, null);
     }
 
     private void OnJoinedToLobby (string roomName)
     {
         if (PhotonNetwork.OfflineMode)
             return;
+
         SteamFriends.SetRichPresence(CONNECT_RICH_PRESENCE, roomName);
     }
 
@@ -252,7 +259,7 @@ public class SteamManager : MonoBehaviour
 
         if(loadedAvatars.TryGetValue(friendId, out tex))
         {
-            Debug.Log($"avatar already exists, loading...");
+            //Debug.Log($"avatar already exists, loading...");
             return tex;
         }
 

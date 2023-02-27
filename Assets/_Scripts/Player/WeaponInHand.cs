@@ -172,6 +172,8 @@ public class WeaponInHand : ItemInHand
         if (ws == null)
             return;
 
+        ply.AnimationState.Play(ply.AnimationState.GetAnimationHash((int)PlayerController.Player_Anims.GunReload), 3);
+
         aSource.clip = reloadClip;
         aSource.Play();
 

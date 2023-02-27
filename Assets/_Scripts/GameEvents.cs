@@ -43,7 +43,7 @@ public static class GameEvents
 
     public static void Quit()
     {
-        Debug.Log("Oyun kapandý!");
+        Debug.Log("Quitted!");
         OnQuitGame?.Invoke();
         Application.Quit();
     }

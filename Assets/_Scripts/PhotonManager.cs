@@ -25,11 +25,12 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public static WaitUntil NotConnecting = new WaitUntil(() => !IsConnecting);
 
     public static bool IsConnected { get; private set; }
-    public static bool IsConnecting { get => isConnecting; private set 
-        { 
-            isConnecting = value; 
-            Debug.Log($"<color=cyan>isConnecting is now {value}</color>"); 
-        } 
+    public static bool IsConnecting
+    {
+        get => isConnecting; private set
+        {
+            isConnecting = value;
+        }
     }
     private static bool isConnecting;
     public static bool InRoom { get; set; }
@@ -84,11 +85,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         if (connectedToMaster && !InLobby)
         {
             PhotonNetwork.JoinLobby();
-            
+
             Debug.Log("started connecting to lobby");
             IsConnecting = true;
             yield return new WaitUntil(() => InLobby);
-            
+
         }
 
         if (!tryQuickMatch)
@@ -108,7 +109,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LeaveLobby();
             yield return new WaitUntil(() => !InLobby);
         }
-            
+
         IsConnecting = true;
         PhotonNetwork.Disconnect();
         yield return new WaitUntil(() => !IsConnected);
@@ -172,7 +173,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         {
             if (!item.Value.CustomProperties.TryGetValue(IM_READY_KEY, out object value) || !(bool)value)
             {
-                Debug.Log("Adamýmýz hazýr deðildi!");
                 return false;
             }
         }
@@ -272,7 +272,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 #else
             Debug.Log($"connected room name: {roomName[..^12]}***********");
 #endif
-            }
+        }
 
 
         OnJoinedToRoom.Invoke();

@@ -72,7 +72,7 @@ public class PlayerClassHandler
 
         currentClass.Initialize(ply, this);
 
-        Debug.Log($"{currentClass} olarak baþladým!");
+        Debug.Log($"started as {currentClass}");
 
         foreach (var item in meshRenderers)
         {

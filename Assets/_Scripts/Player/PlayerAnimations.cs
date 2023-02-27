@@ -18,14 +18,14 @@ public class PlayerAnimations
 
     private PlayerController ply;
 
-    public void Initialize (PlayerController ply)
+    public void Initialize(PlayerController ply)
     {
         this.ply = ply;
         xHash = Animator.StringToHash("x");
         zHash = Animator.StringToHash("z");
     }
 
-    public void Update ()
+    public void Update()
     {
         lerpedX = Mathf.Lerp(lerpedX, targetX, Time.deltaTime * lerpSpeed);
         lerpedZ = Mathf.Lerp(lerpedZ, targetZ, Time.deltaTime * lerpSpeed);
@@ -34,9 +34,38 @@ public class PlayerAnimations
         anim.SetFloat(zHash, lerpedZ);
     }
 
-    public void SetXZ (float targetX, float targetZ)
+    /// <returns>returns that if we should reorientate the player?</returns>
+    public void SetXZ(float targetX, float targetZ)
     {
         this.targetX = targetX;
         this.targetZ = targetZ;
+    }
+
+    public bool SetXZAndCheckReorientation(float targetX, float targetZ, float angleLimit, Vector3 mousePos, ref Vector3 reorientationDir)
+    {
+        SetXZ(targetX, targetZ);
+
+        if (targetX != 0 || targetZ != 0)
+            return false;
+
+        mousePos.y = 0;
+
+        Vector3 ourPos = anim.transform.position;
+        ourPos.y = 0;
+
+        Vector3 forwardVector = anim.transform.forward;
+        forwardVector.y = 0;
+        
+        Vector3 mouseDir = (mousePos - ourPos).normalized;
+        mouseDir.y = 0;
+
+        Debug.DrawRay(ourPos, forwardVector, Color.green);
+        Debug.DrawRay(ourPos, mouseDir, Color.blue);
+
+        float angle = Vector3.Angle(mouseDir, forwardVector);
+
+        reorientationDir = mouseDir;
+
+        return angle >= angleLimit * 2;
     }
 }

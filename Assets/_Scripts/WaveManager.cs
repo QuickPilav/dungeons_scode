@@ -55,7 +55,7 @@ public class WaveManager : MonoBehaviourPunCallbacks
     public static bool GameStarted { get; private set; }
     public static WaveManager Instance;
 
-    public const int WAVE_AMOUNT = 5; //50
+    public const int WAVE_AMOUNT = 50; //50
     private const int XP_ADDITION = 2;
 #if UNITY_EDITOR
     private const float RANDOM_PICKUP_SPAWN_RATE = 10f;

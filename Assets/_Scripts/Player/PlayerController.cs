@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
         GunShoot,
         Downed,
         GetUp,
-        Helping
+        Helping,
+        GunReload,
     }
 
     public int InteractionPriority => 7;
@@ -147,6 +148,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     [SerializeField] private float batteryDepletionRate = .1f;
     [SerializeField] private float batteryLeft = 100f;
     [SerializeField] private Optional<Outline> outline;
+    [SerializeField, Range(0, 90f)] private float reOrientationAngleLimit = 45f;
 
 
     public Action OnRolled;
@@ -241,6 +243,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
 
     private readonly List<SmokeGrenadeProjectile> smokeInflictors = new List<SmokeGrenadeProjectile>();
     private List<PlayerController> CloseProximity;
+    private WeaponIk ik;
 
     private ItemSystem.Items _currentWeaponSlotIndex;
 
@@ -268,6 +271,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     {
         if (isMainMenuPlayer)
             return;
+
+        ik = GetComponentInChildren<WeaponIk>();
 
         cc = GetComponent<CharacterController>();
         itemSystem = GetComponent<ItemSystem>();
@@ -491,7 +496,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
         InputPayload lastInput = playerInput.Get(inControl, inMouseControl);
         Vector3 mousePos = HandleMousePosition(lastInput);
 
-        HandleAnimations();
+        HandleAnimations(mousePos);
         if (inControl)
         {
             HandleFlashlight();
@@ -539,12 +544,13 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
             float dotX = (float)stream.ReceiveNext();
             float dotZ = (float)stream.ReceiveNext();
 
-            if (!photonView.IsMine)
-            {
-                this.dotX = dotX;
-                this.dotZ = dotZ;
-                playerAnims.SetXZ(dotX, dotZ);
-            }
+            Debug.Log("burasý zaten gelmiyor!");
+
+            ik.dontUseOrientation = dotX != 0 || dotZ != 0;
+
+            this.dotX = dotX;
+            this.dotZ = dotZ;
+            playerAnims.SetXZ(dotX, dotZ);
         }
     }
     private Vector3 HandleMousePosition(InputPayload lastInput)
@@ -594,14 +600,25 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
         camSystem.SetAttackPoint(lastInput, smoothAdded);
         return smoothAdded;
     }
-    private void HandleAnimations()
+    private void HandleAnimations(Vector3 mousePos)
     {
         Debug.DrawRay(transform.position, NormalizedVelocity, Color.cyan);
         dotX = Vector3.Dot(NormalizedVelocity, transform.right);
         dotZ = Vector3.Dot(NormalizedVelocity, transform.forward);
 
-        playerAnims.SetXZ(dotX, dotZ);
+        Vector3 reorientationDir = mousePos;
+
+        bool reorientate = playerAnims.SetXZAndCheckReorientation(dotX, dotZ,reOrientationAngleLimit,mousePos,ref reorientationDir);
+
+        if (reorientate)
+        {
+            photonView.RPC(nameof(ReorientateRpc), RpcTarget.All, reorientationDir);
+        }
+
+
+        ik.dontUseOrientation = dotX != 0 || dotZ != 0;
     }
+
     private void HandleFlashlight()
     {
         if (batteryLeft <= 0 || health == 0 || !WaveManager.GameStarted)
@@ -978,6 +995,11 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     private void FlashlightRpc(bool state)
     {
         flashLight.enabled = state;
+    }
+    [PunRPC]
+    private void ReorientateRpc (Vector3 orientation)
+    {
+        ik.Reoritentate(Quaternion.LookRotation(orientation));
     }
     public void ToggleClipping()
     {

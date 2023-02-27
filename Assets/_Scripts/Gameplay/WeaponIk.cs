@@ -23,6 +23,67 @@ public class WeaponIk : MonoBehaviour
     [SerializeField] private float angleLimit = 90f;
     [SerializeField] private float distanceLimit = 1.5f;
 
+    public bool dontUseOrientation;
+
+    private Quaternion currentRotation;
+    private readonly float reorientateTime = .25f;
+    private IEnumerator currentReorientateRoutine;
+    private Quaternion startRot;
+    [SerializeField] private float movingReorientateSpeed = 5f;
+
+    private void Awake()
+    {
+        startRot = transform.localRotation;
+
+        currentRotation = transform.rotation;
+    }
+
+
+    private void Update()
+    {
+        if (dontUseOrientation)
+        {
+            if(currentReorientateRoutine != null)
+            {
+                StopCoroutine(currentReorientateRoutine);
+            }
+
+            transform.localRotation = startRot;
+
+            currentRotation = Quaternion.Slerp(currentRotation,transform.rotation, movingReorientateSpeed * Time.deltaTime);
+        }
+
+        transform.rotation = currentRotation;
+    }
+
+    public void Reoritentate (Quaternion targetRot)
+    {
+        if(currentReorientateRoutine != null)
+        {
+            StopCoroutine(currentReorientateRoutine);
+        }
+
+        currentReorientateRoutine = ReOrientate(targetRot);
+        StartCoroutine(currentReorientateRoutine);
+    }
+
+    private IEnumerator ReOrientate (Quaternion targetRot)
+    {
+        Quaternion startRot = currentRotation;
+        Quaternion endRot = targetRot;
+
+        float timePassed = 0f;
+        while (timePassed < 1f)
+        {
+            timePassed += Time.deltaTime / reorientateTime;
+            currentRotation = Quaternion.Slerp(startRot,endRot,timePassed);
+            yield return null;
+        }
+        currentRotation = endRot;
+
+        currentReorientateRoutine = null;
+    }
+
     private void LateUpdate ()
     {
         Vector3 targetPosition = GetTargetPosition();
