@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     /// <summary>Þu anki can, max can</summary>
     public Action<int, int> OnHealthChanged;
 
+    private const int ANIMATOR_WEAPONS_LAYER = 3;
+
     public enum Player_Anims
     {
         Speed,
@@ -247,8 +249,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
 
     private ItemSystem.Items _currentWeaponSlotIndex;
 
+    private int health = -1; //-1 olarak baþlayalým ki en baþta kalkma animasyonu oynamasýn
     private int batteryLeftInteger = 100;
-    private int health;
     private Optional<IDamagable> lastClosestEnemy;
     private Vector3 smoothedMousePos;
 
@@ -460,11 +462,13 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
         if (!classInitialized)
             return;
 
-        playerAnims.Update();
+        float dt = Time.deltaTime;
+
+        playerAnims.Update(dt);
 
         if (!IsDead)
         {
-            classHandler.Update();
+            classHandler.Update(dt);
         }
 
         if (!photonView.IsMine)
@@ -610,7 +614,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
 
         bool reorientate = playerAnims.SetXZAndCheckReorientation(dotX, dotZ,reOrientationAngleLimit,mousePos,ref reorientationDir);
 
-        if (reorientate)
+        if (reorientate && !IsDead)
         {
             photonView.RPC(nameof(ReorientateRpc), RpcTarget.All, reorientationDir);
         }
@@ -662,6 +666,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
         if (!photonView.IsMine)
             return;
 
+        photonView.RPC(nameof(RevivedRpc),RpcTarget.All);
+
         StartCoroutine(enumerator());
 
         IEnumerator enumerator()
@@ -674,6 +680,29 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     private void Die()
     {
         CurrentState = downedState;
+
+        if (!photonView.IsMine)
+            return;
+
+        photonView.RPC(nameof(DieRpc),RpcTarget.All);
+    }
+
+    [PunRPC]
+    private void DieRpc ()
+    {
+        ik.targetDieWeight = 0f;
+        playerAnims.SetLayerWeight(ANIMATOR_WEAPONS_LAYER, 0f);
+        
+        animationState.Play(animationState.GetAnimationHash((int)Player_Anims.Downed), layer: 0);
+    }
+
+    [PunRPC]
+    private void RevivedRpc ()
+    {
+        ik.targetDieWeight = 1f;
+        playerAnims.SetLayerWeight(ANIMATOR_WEAPONS_LAYER, 1f);
+
+        animationState.Play(animationState.GetAnimationHash((int)Player_Anims.GetUp), layer: 0);
     }
     public void SetHashtable()
     {
@@ -1010,5 +1039,28 @@ public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable, IPunI
     {
         godMode = !godMode;
         Debug.Log($"god mode is now set to {godMode}");
+    }
+
+    [PunRPC]
+    public void RollRpc()
+    {
+        if(!photonView.IsMine)
+        {
+            //bu animasyon baþka yerden oynatýlýyor. (PlayerStateGrounded/Roll())
+            animationState.Play(animationState.GetAnimationHash((int)Player_Anims.Roll), layer: 0);
+        }
+
+        StartCoroutine(enumerator());
+
+        IEnumerator enumerator ()
+        {
+            ik.targetDieWeight = 0f;
+            playerAnims.SetLayerWeight(ANIMATOR_WEAPONS_LAYER, 0f);
+
+            yield return new WaitForSeconds(PlayerStateGrounded.ROLL_TIME);
+            
+            playerAnims.SetLayerWeight(ANIMATOR_WEAPONS_LAYER, 1f);
+            ik.targetDieWeight = 1f;
+        }
     }
 }

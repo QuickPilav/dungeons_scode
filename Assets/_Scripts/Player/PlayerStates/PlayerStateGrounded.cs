@@ -23,6 +23,8 @@ public class PlayerStateGrounded : PlayerStateBase
 
     private Optional<IEnumerator> rollRoutine;
 
+    public const float ROLL_TIME = 1f;
+
     private float pingTimer;
     private float moveBuff;
 
@@ -84,8 +86,9 @@ public class PlayerStateGrounded : PlayerStateBase
         ply.AnimationState.rotationSpeed = 12f;
         ply.CurrentState = ply.AnimationState;
 
-        ply.photonView.RPC(nameof(ply.PlayAnimationRpc), Photon.Pun.RpcTarget.Others, PlayerController.Player_Anims.Roll, 0);
-        yield return ply.StartCoroutine(ply.AnimationState.Play(ply.AnimationState.GetAnimationHash((int)PlayerController.Player_Anims.Roll), 1f));
+        ply.photonView.RPC(nameof(ply.RollRpc), Photon.Pun.RpcTarget.All);
+
+        yield return ply.StartCoroutine(ply.AnimationState.Play(ply.AnimationState.GetAnimationHash((int)PlayerController.Player_Anims.Roll), ROLL_TIME));
 
         if (ply.CurrentState != ply.AnimationState)
         {

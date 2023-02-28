@@ -23,6 +23,12 @@ public class WeaponIk : MonoBehaviour
     [SerializeField] private float angleLimit = 90f;
     [SerializeField] private float distanceLimit = 1.5f;
 
+    public float targetDieWeight = 1f;
+    private float dieWeight = 1f;
+
+    public float targetRollWeight = 1f;
+    private float rollWeight = 1f;
+
     public bool dontUseOrientation;
 
     private Quaternion currentRotation;
@@ -41,6 +47,9 @@ public class WeaponIk : MonoBehaviour
 
     private void Update()
     {
+        dieWeight = Mathf.Lerp(dieWeight,targetDieWeight,Time.deltaTime * 2f);
+        rollWeight = Mathf.Lerp(rollWeight,targetRollWeight,Time.deltaTime * 2f);
+
         if (dontUseOrientation)
         {
             if(currentReorientateRoutine != null)
@@ -91,7 +100,9 @@ public class WeaponIk : MonoBehaviour
         {
             for (int b = 0; b < boneTransforms.Length; b++)
             {
-                AimAtTarget(boneTransforms[b].bone, targetPosition, boneTransforms[b].weight * weight);
+                float weightMult = weight * dieWeight * rollWeight;
+
+                AimAtTarget(boneTransforms[b].bone, targetPosition, boneTransforms[b].weight * weightMult);
             }
         }
     }

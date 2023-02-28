@@ -18,20 +18,53 @@ public class PlayerAnimations
 
     private PlayerController ply;
 
+    private readonly float[] layerLerpMultipliers = {5,5,2,1 };
+    private float[] layerMultipliers;
+    private float[] targetLayerWeights;
+    private float[] layerWeights;
+    private int layerCount;
+
     public void Initialize(PlayerController ply)
     {
         this.ply = ply;
         xHash = Animator.StringToHash("x");
         zHash = Animator.StringToHash("z");
+
+        layerCount = anim.layerCount;
+
+        targetLayerWeights = new float[layerCount];
+        layerWeights = new float[layerCount];
+        layerMultipliers = new float[layerCount];
+
+        for (int i = 0; i < layerCount; i++)
+        {
+            float weight = anim.GetLayerWeight(i);
+            targetLayerWeights[i] = weight;
+            layerWeights[i] = weight;
+            layerMultipliers[i] = 1f; 
+        }
     }
 
-    public void Update()
+    public void Update(float dt)
     {
-        lerpedX = Mathf.Lerp(lerpedX, targetX, Time.deltaTime * lerpSpeed);
-        lerpedZ = Mathf.Lerp(lerpedZ, targetZ, Time.deltaTime * lerpSpeed);
+        lerpedX = Mathf.Lerp(lerpedX, targetX, dt * lerpSpeed);
+        lerpedZ = Mathf.Lerp(lerpedZ, targetZ, dt * lerpSpeed);
 
         anim.SetFloat(xHash, lerpedX);
         anim.SetFloat(zHash, lerpedZ);
+
+        for (int i = 0; i < layerCount; i++)
+        {
+            layerWeights[i] = Mathf.Lerp(layerWeights[i], targetLayerWeights[i], dt * layerLerpMultipliers[i]);
+            anim.SetLayerWeight(i, layerWeights[i] * layerMultipliers[i]);
+        }
+    }
+
+
+    /// <param name="weight">0 ile 1 arasý multiplierdýr...</param>
+    public void SetLayerWeight (int layerIndex, float weight)
+    {
+        layerMultipliers[layerIndex] = weight;
     }
 
     /// <returns>returns that if we should reorientate the player?</returns>

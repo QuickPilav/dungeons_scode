@@ -118,7 +118,7 @@ public class PlayerClassHandler
         }
     }
 
-    public void Update ()
+    public void Update (float dt)
     {
         currentClass.OnStateUpdateNormal();
     }

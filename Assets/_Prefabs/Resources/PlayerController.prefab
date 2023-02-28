@@ -4900,6 +4900,8 @@ MonoBehaviour:
   iterations: 1
   angleLimit: 160
   distanceLimit: 1.5
+  targetDieWeight: 1
+  targetRollWeight: 1
   dontUseOrientation: 0
   movingReorientateSpeed: 15
 --- !u!114 &3845421699110661113

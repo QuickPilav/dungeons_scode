@@ -75,6 +75,8 @@ MonoBehaviour:
   - EndWaveRpc
   - StartWaveRpc
   - ReorientateRpc
+  - RevivedRpc
+  - RollRpc
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
