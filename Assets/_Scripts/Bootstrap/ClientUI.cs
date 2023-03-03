@@ -183,6 +183,11 @@ public class ClientUI : Singleton<ClientUI>
     }
     private void CalculateEnter()
     {
+        if(DavidFDev.DevConsole.DevConsole.IsOpenAndFocused)
+        {
+            return;
+        }
+
         if (popupInstance.GetPopupCount > 0)
         {
             popupInstance.GetPopup(0).ClickYes_Btn();

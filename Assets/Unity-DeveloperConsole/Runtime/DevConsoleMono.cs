@@ -116,7 +116,7 @@ namespace DavidFDev.DevConsole
         private static readonly Version _version = new Version(1, 0, 5);
         private static readonly string[] _permanentCommands =
         {
-            "commands", "help", "print", "clear", "reset", "bind", "unbind", "bindings"
+            "commands", "help", "print", "clear", "resetconsole",
         };
 
         #endregion
@@ -1550,7 +1550,7 @@ namespace DavidFDev.DevConsole
             ));
 
             AddCommand(Command.Create(
-                "reset",
+                "resetconsole",
                 "",
                 "Reset the position and size of the developer console",
                 () => ResetConsole()
@@ -1620,6 +1620,7 @@ namespace DavidFDev.DevConsole
                 }
             ));
 
+            /*
             AddCommand(Command.Create<string>(
                 "enum",
                 "",
@@ -1709,6 +1710,7 @@ namespace DavidFDev.DevConsole
                     LogSeperator();
                 }
             ));
+            */
 
             AddCommand(Command.Create(
                 "commands",
@@ -1716,12 +1718,13 @@ namespace DavidFDev.DevConsole
                 "Display a sorted list of all available commands",
                 () =>
                 {
-                    Log("https://github.com/DavidF-Dev/Unity-DeveloperConsole");
+                    //Log("https://github.com/DavidF-Dev/Unity-DeveloperConsole");
 
                     LogSeperator();
 
                     LogSeperator("Commands");
-                    Log(string.Join(", ", _commands.Keys.OrderBy(s => s)));
+                    IList<string> nonCustomCommands = _commands.Keys.Where(s => !_commands[s].IsCustomCommand).ToList();
+                    Log(string.Join(", ", nonCustomCommands.OrderBy(s => s)));
                     LogSeperator();
 
                     IList<string> customCommands = _commands.Keys.Where(s => _commands[s].IsCustomCommand).ToList();
@@ -1745,7 +1748,7 @@ namespace DavidFDev.DevConsole
                 "Display the developer console version",
                 () => Log($"Developer console version: {_version}.")
             ));
-
+            /*
             AddCommand(Command.Create<InputKey, string>(
                 "bind",
                 "addbind",
@@ -1800,6 +1803,7 @@ namespace DavidFDev.DevConsole
                     LogSeperator();
                 }
             ));
+            */
 
             AddCommand(Command.Create<int>(
                 "log_size",
@@ -1848,6 +1852,7 @@ namespace DavidFDev.DevConsole
                 () => LogVariable("App version", Application.version)
             ));
 
+            /*
             AddCommand(Command.Create(
                 "unityversion",
                 "",
@@ -1944,6 +1949,7 @@ namespace DavidFDev.DevConsole
                 () => LogVariable("Window size", $"{Screen.width} x {Screen.height}")
             ));
 
+            */
             AddCommand(Command.Create<int>(
                 "targetfps",
                 "",
@@ -1960,6 +1966,8 @@ namespace DavidFDev.DevConsole
             #endregion
 
             #region Camera commands
+
+            /*
 
             AddCommand(Command.Create<bool?>(
                 "cam_ortho",
@@ -2021,7 +2029,7 @@ namespace DavidFDev.DevConsole
                     LogVariable("Field of view", Camera.main.fieldOfView);
                 }
             ));
-
+            */
             #endregion
 
             #region Log commands
@@ -2111,9 +2119,9 @@ namespace DavidFDev.DevConsole
             ));
 
             #endregion
-
+            /*
             #region Reflection commands
-
+            
             AddCommand(Command.Create<string>(
                 "cs_evaluate",
                 "cs_eval,evaluate,eval",
@@ -2321,7 +2329,7 @@ namespace DavidFDev.DevConsole
             ));
 
             #endregion
-
+            */
             #region Stat display commands
 
             AddCommand(Command.Create(

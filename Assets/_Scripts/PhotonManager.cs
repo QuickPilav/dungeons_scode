@@ -63,8 +63,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         PhotonPeer.RegisterType(typeof(CSteamID), (byte)RegisteredSerializations.SteamId, PhotonSerializers.SerializeCSteamID, PhotonSerializers.DeserializeCSteamID);
 
+        SteamManager.OnSteamInitialized.SubscribeToEvent(OnInitialized);
+    }
+
+    private void OnInitialized ()
+    {
         StartCoroutine(WaitTillConnection(true));
     }
+
     public IEnumerator WaitTillConnection(bool tryQuickMatch)
     {
         Debug.LogWarning("waiting for connection to end");
